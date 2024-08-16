@@ -37,3 +37,5 @@ git log --stat
 # Para obtemer el archivo de un determinadon commit:
 git checkout 25bb18b3ccf92fcfeb6130a56c6be2c2bb1580fa commands.md
 git checkout master commands.md
+# Comando para hacer add y commit, pero esto solo funciona con archivos que hayan tenido add previamente.
+git commit -am "Ingresar mensaje del commit"
