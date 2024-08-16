@@ -1,3 +1,4 @@
+# Comandos utiles de GIT v.1 #
 # Ver la configuracion del git:
 git config --list
 # Ver donde estan las configuracion guardadas del git:
