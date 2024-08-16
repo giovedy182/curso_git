@@ -17,4 +17,8 @@ git add .
 git rm --cached commands.md
 # Enviar el archivo al repositorio del git:
 git commit -m "Este es el primer commit"
+# Ver los commits del archivo:
+git log commands.md
+# Ver los cambios del archivo:
+git show commands.md
 
