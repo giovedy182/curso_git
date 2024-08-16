@@ -1,4 +1,4 @@
-# Comandos utiles de GIT v.1 Master : 16/08/2024 #
+# Comandos utiles de GIT v.1 16/08/2024 #
 # Ver la configuracion del git:
 git config --list
 # Ver donde estan las configuracion guardadas del git:
