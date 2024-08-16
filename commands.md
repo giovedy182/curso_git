@@ -43,3 +43,7 @@ git commit -am "Ingresar mensaje del commit"
 git branch developer
 # Moverse entre ramas
 git checkout developer
+# Listar los branch
+git branch
+# Hacer merge al master desde el master, trayendo los cambios del developer
+git merge developer
