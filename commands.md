@@ -35,8 +35,16 @@ git reset f273dcc4d123b53dbec46f3a614c45b4ac39514b --hard
 git reset f273dcc4d123b53dbec46f3a614c45b4ac39514b --soft
 # Ver los commits especificaos en los archivos
 git log --stat
-# Para obtemer el archivo de un determinadon commit:
+# Para obtemer el archivo de un determinadon commit
 git checkout 25bb18b3ccf92fcfeb6130a56c6be2c2bb1580fa commands.md
 git checkout master commands.md
 # Comando para hacer add y commit, pero esto solo funciona con archivos que hayan tenido add previamente.
 git commit -am "Ingresar mensaje del commit"
+# Crear una nueva rama
+git branch developer
+# Moverse entre ramas
+git checkout developer
+# Listar los branch
+git branch
+# Hacer merge al master desde el master, trayendo los cambios del developer
+git merge developer
