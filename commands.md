@@ -42,4 +42,4 @@ git commit -am "Ingresar mensaje del commit"
 # Crear una nueva rama
 git branch developer
 # Moverse entre ramas
-git checkup developer
+git checkout developer
