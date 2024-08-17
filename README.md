@@ -1,2 +1,2 @@
 # curso_git
-Comandos del Curso Git
+## Comandos del Curso Git
