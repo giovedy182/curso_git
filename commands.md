@@ -77,32 +77,40 @@ origin  https://github.com/giovedy182/curso_git.git (fetch)
 origin  https://github.com/giovedy182/curso_git.git (push)
 # Hacer push al origin (Github) desde el repo local main:
 git push origin main
-# La primera vez sale este conflicto:
-To https://github.com/giovedy182/curso_git.git
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/giovedy182/curso_git.git'
-hint: Updates were rejected because the remote contains work that you do not
-hint: have locally. This is usually caused by another repository pushing to
-hint: the same ref. If you want to integrate the remote changes, use
-hint: 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+### La primera vez sale este conflicto:
+##### To https://github.com/giovedy182/curso_git.git
+#####  ! [rejected]        main -> main (fetch first)
+##### error: failed to push some refs to 'https://github.com/giovedy182/curso_git.git'
+##### hint: Updates were rejected because the remote contains work that you do not
+##### hint: have locally. This is usually caused by another repository pushing to
+##### hint: the same ref. If you want to integrate the remote changes, use
+##### hint: 'git pull' before pushing again.
+##### hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 # Para correcgirlo ejecutar un pull:
 git pull origin main
-# Pero muestar este error:
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-Unpacking objects: 100% (3/3), 886 bytes | 80.00 KiB/s, done.
-From https://github.com/giovedy182/curso_git
- * branch            main       -> FETCH_HEAD
- * [new branch]      main       -> origin/main
-fatal: refusing to merge unrelated histories
+### Pero muestar este error:
+##### remote: Enumerating objects: 3, done.
+##### remote: Counting objects: 100% (3/3), done.
+##### remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+##### Unpacking objects: 100% (3/3), 886 bytes | 80.00 KiB/s, done.
+##### From https://github.com/giovedy182/curso_git
+#####  * branch            main       -> FETCH_HEAD
+#####  * [new branch]      main       -> origin/main
+##### fatal: refusing to merge unrelated histories
 # Para corregir ejecutar el pull --allow-unrelated-histories
 git pull origin main --allow-unrelated-histories
 # Deberia de mostrar este mensaje de ok:
-From https://github.com/giovedy182/curso_git
- * branch            main       -> FETCH_HEAD
-Merge made by the 'ort' strategy.
- README.md | 2 ++
- 1 file changed, 2 insertions(+)
- create mode 100644 README.md
+##### From https://github.com/giovedy182/curso_git
+#####  * branch            main       -> FETCH_HEAD
+##### Merge made by the 'ort' strategy.
+#####  README.md | 2 ++
+#####  1 file changed, 2 insertions(+)
+#####  create mode 100644 README.md
+# Ver el log mejorado:
+git log --all --graph --decorate --oneline
+# Alias en git
+git config --global alias.logtree "log --all --graph --decorate --oneline"
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+# Usar un alias de git
+git logtree
+git superlog
