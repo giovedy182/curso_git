@@ -8,6 +8,8 @@ git config --global user.name "Giovedy Marmolejo"
 git config --global user.email "giovedy.182@gmail.com"
 # Iniciar git, en la ruta actual:
 git init
+# Cambiar el nombre de Master a MAIN
+git branch -m main
 # Ver si hay archivos nuevos en el fs:
 git status
 # Agregar un archivos especifico al git:
@@ -46,5 +48,60 @@ git branch developer
 git checkout developer
 # Listar los branch
 git branch
-# Hacer merge al master desde el master, trayendo los cambios del developer
+# Hacer merge en el master, trayendo los cambios del developer
+# para hacer el marge los repos deben estar commiteados
 git merge developer
+# Pasos para ssh-keys:
+# Windows
+ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
+# Comprobar proceso, agregarlo y listar 
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+ssh-add -l
+# Agregar las configuraciones ssh
+vim ~/.ssh/config
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+# Agregar al ssh-add
+ssh-add -k ~/.ssh/id_rsa
+# Listar los repos remotos (Github)
+git remote
+# Crear el repo remoto origin:
+git remote add origin https://github.com/giovedy182/curso_git.git
+# Lista los repos remotos con detalle:
+git remote -v
+origin  https://github.com/giovedy182/curso_git.git (fetch)
+origin  https://github.com/giovedy182/curso_git.git (push)
+# Hacer push al origin (Github) desde el repo local main:
+git push origin main
+# La primera vez sale este conflicto:
+To https://github.com/giovedy182/curso_git.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/giovedy182/curso_git.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+# Para correcgirlo ejecutar un pull:
+git pull origin main
+# Pero muestar este error:
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 886 bytes | 80.00 KiB/s, done.
+From https://github.com/giovedy182/curso_git
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+fatal: refusing to merge unrelated histories
+# Para corregir ejecutar el pull --allow-unrelated-histories
+git pull origin main --allow-unrelated-histories
+# Deberia de mostrar este mensaje de ok:
+From https://github.com/giovedy182/curso_git
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
