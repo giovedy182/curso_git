@@ -9,6 +9,9 @@ git config --list --show-origin
 git config --global user.name "Giovedy Marmolejo"
 # email
 git config --global user.email "giovedy.182@gmail.com"
+# CAmbiar de master a main la rama principal
+git config --global init.defaultBranch main
+
 # Iniciar git, en la ruta actual:
 git init
 # Cambiar el nombre de Master a MAIN
