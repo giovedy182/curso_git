@@ -5,7 +5,9 @@ git config --list
 # Ver donde estan las configuracion guardadas del git:
 git config --list --show-origin
 # Agregar el name y email a la confuguracion del git:
+# name
 git config --global user.name "Giovedy Marmolejo"
+# email
 git config --global user.email "giovedy.182@gmail.com"
 # Iniciar git, en la ruta actual:
 git init
