@@ -1,5 +1,4 @@
-# curso_git
-## Comandos del Curso Git
+# Comandos del Git
 ## Comandos utiles de GIT v.1 16/08/2024 #
 * Ver la configuracion del git:
 ``` bash
