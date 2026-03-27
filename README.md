@@ -145,6 +145,7 @@ git remote add origin https://github.com/giovedy182/curso_git.git
 * Lista los repos remotos con detalle:
 ```bash
 git remote -v
+```
 ```bash
 origin  https://github.com/giovedy182/curso_git.git (fetch)
 origin  https://github.com/giovedy182/curso_git.git (push)
@@ -153,45 +154,45 @@ origin  https://github.com/giovedy182/curso_git.git (push)
 ```bash
 git push origin main
 ```
-*La primera vez sale este conflicto:*
-```bash
-To https://github.com/giovedy182/curso_git.git
- ! [rejected]        main -> main (fetch first)
- error: failed to push some refs to 'https://github.com/giovedy182/curso_git.git'
- hint: Updates were rejected because the remote contains work that you do not
- hint: have locally. This is usually caused by another repository pushing to
- hint: the same ref. If you want to integrate the remote changes, use
- hint: 'git pull' before pushing again.
- hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-```
-*Para correcgirlo ejecutar un pull:*
-```bash
-git pull origin main
-```
-*Pero muestar este error:*
-```bach
- remote: Enumerating objects: 3, done.
- remote: Counting objects: 100% (3/3), done.
- remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
- Unpacking objects: 100% (3/3), 886 bytes | 80.00 KiB/s, done.
- From https://github.com/giovedy182/curso_git
-  * branch            main       -> FETCH_HEAD
-  * [new branch]      main       -> origin/main
- fatal: refusing to merge unrelated histories
-```
-*Para corregir ejecutar el pull --allow-unrelated-histories*
-```bash
-git pull origin main --allow-unrelated-histories
-```
-*Deberia de mostrar este mensaje de ok:*
-```bash
- From https://github.com/giovedy182/curso_git
-  * branch            main       -> FETCH_HEAD
- Merge made by the 'ort' strategy.
-  README.md | 2 ++
-  1 file changed, 2 insertions(+)
-  create mode 100644 README.md
-```
+    * *La primera vez sale este conflicto:*
+    ```bash
+     To https://github.com/giovedy182/curso_git.git
+     ! [rejected]        main -> main (fetch first)
+     error: failed to push some refs to 'https://github.com/giovedy182/curso_git.git'
+     hint: Updates were rejected because the remote contains work that you do not
+     hint: have locally. This is usually caused by another repository pushing to
+     hint: the same ref. If you want to integrate the remote changes, use
+     hint: 'git pull' before pushing again.
+     hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+    ```
+    *Para correcgirlo ejecutar un pull:*
+    ```bash
+    git pull origin main
+    ```
+    * *Pero muestar este error:*
+    ```bach
+     remote: Enumerating objects: 3, done.
+     remote: Counting objects: 100% (3/3), done.
+     remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+     Unpacking objects: 100% (3/3), 886 bytes | 80.00 KiB/s, done.
+     From https://github.com/giovedy182/curso_git
+      * branch            main       -> FETCH_HEAD
+      * [new branch]      main       -> origin/main
+     fatal: refusing to merge unrelated histories
+    ```
+    * *Para corregir ejecutar el pull --allow-unrelated-histories*
+    ```bash
+    git pull origin main --allow-unrelated-histories
+    ```
+    *Deberia de mostrar este mensaje de ok:*
+    ```bash
+     From https://github.com/giovedy182/curso_git
+      * branch            main       -> FETCH_HEAD
+     Merge made by the 'ort' strategy.
+      README.md | 2 ++
+      1 file changed, 2 insertions(+)
+      create mode 100644 README.md
+    ```
 * Ver el log mejorado:
 ```bash
 git log --all --graph --decorate --oneline
