@@ -151,9 +151,10 @@ origin  https://github.com/giovedy182/curso_git.git (fetch)
 origin  https://github.com/giovedy182/curso_git.git (push)
 ```
 * Hacer push al origin (Github) desde el repo local main:
-```bash
-git push origin main
-```
+    * Comando:
+    ```bash
+    git push origin main
+    ```
     * *La primera vez sale este conflicto:*
     ```bash
      To https://github.com/giovedy182/curso_git.git
@@ -165,20 +166,20 @@ git push origin main
      hint: 'git pull' before pushing again.
      hint: See the 'Note about fast-forwards' in 'git push --help' for details.
     ```
-    *Para correcgirlo ejecutar un pull:*
+    * *Para correcgirlo ejecutar un pull:*
     ```bash
     git pull origin main
     ```
-    * *Pero muestar este error:*
-    ```bach
-     remote: Enumerating objects: 3, done.
-     remote: Counting objects: 100% (3/3), done.
-     remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-     Unpacking objects: 100% (3/3), 886 bytes | 80.00 KiB/s, done.
-     From https://github.com/giovedy182/curso_git
-      * branch            main       -> FETCH_HEAD
-      * [new branch]      main       -> origin/main
-     fatal: refusing to merge unrelated histories
+    * *Pero muestra este error:*
+    ```bash
+    remote: Enumerating objects: 3, done.
+    remote: Counting objects: 100% (3/3), done.
+    remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+    Unpacking objects: 100% (3/3), 886 bytes | 80.00 KiB/s, done.
+    From https://github.com/giovedy182/curso_git
+    * branch            main       -> FETCH_HEAD
+    * [new branch]      main       -> origin/main
+    fatal: refusing to merge unrelated histories
     ```
     * *Para corregir ejecutar el pull --allow-unrelated-histories*
     ```bash
